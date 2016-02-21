@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration',
     'users.apps.UsersConfig',
+    'films.apps.FilmsConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
