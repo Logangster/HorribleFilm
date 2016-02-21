@@ -1,0 +1,11 @@
+# Python cache and built artifacts
+*.pyc
+*.pyo
+
+# Various database files
+*.rdb
+*.sqlite3
+
+# Non-git hidden files
+/.*
+!/.git*

@@ -1,0 +1,10 @@
+<h1>Sign Up</h1>
+
+
+<section>
+<form action=. method=POST>
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type=submit value='Sign Up' />
+</form>
+</section>
