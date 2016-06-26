@@ -50,6 +50,10 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'horriblefilm.urls'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR + "/horriblefilm/", "static"),
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
