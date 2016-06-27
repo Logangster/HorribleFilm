@@ -3,22 +3,22 @@
 
 {% block content %}
 
-<div class="container">
-<div class="col-sm-6 jumbotron">
-<h1>Register</h1>
-<hr/>
-<form role="form" class="form-horizontal" method="post" action=.>
-    {% csrf_token %}
-        {% for field in form %}
-            <fieldset class="form-group">
-                <label for="{{ field.html_name }}">{{ field.label }}</label>
-                {{ field | add_css:"form-control" }}
-                {{ field.errors }}
-            </fieldset>
-        {% endfor %}
-        <input type="submit" class="btn btn-primary" value="login" />
-        <input type="hidden" name="next" value="{{ next }}" />
-</form>
-</div>
-</div>
+    <div class="container">
+        <div class="col-sm-6 jumbotron">
+            <h1>Registration</h1>
+            <hr/>
+            <form role="form" class="form-horizontal" method="post" action=.>
+                {% csrf_token %}
+                {% for field in form %}
+                    <fieldset class="form-group">
+                        <label for="{{ field.html_name }}">{{ field.label }}</label>
+                        {{ field | add_css:"form-control" }}
+                        {{ field.errors }}
+                    </fieldset>
+                {% endfor %}
+                <br/>
+                <input type="submit" class="btn btn-primary" value="Register"/>
+            </form>
+        </div>
+    </div>
 {% endblock content %}
