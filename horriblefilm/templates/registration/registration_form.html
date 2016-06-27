@@ -1,15 +1,24 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
+{% load form_styles %}
 
 {% block content %}
-<h1>Sign Up</h1>
 
-
-<section>
-<form action=. method=POST>
+<div class="container">
+<div class="col-sm-6 jumbotron">
+<h1>Register</h1>
+<hr/>
+<form role="form" class="form-horizontal" method="post" action=.>
     {% csrf_token %}
-    {{ form.as_ul }}
-    <input type=submit value='Sign Up' />
+        {% for field in form %}
+            <fieldset class="form-group">
+                <label for="{{ field.html_name }}">{{ field.label }}</label>
+                {{ field | add_css:"form-control" }}
+                {{ field.errors }}
+            </fieldset>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
 </form>
-</section>
-
+</div>
+</div>
 {% endblock content %}
