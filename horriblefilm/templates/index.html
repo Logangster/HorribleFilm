@@ -3,6 +3,9 @@
 {% block content %}
     <div class="container jumbotron">
         <h1>Welcome to Horrible Film!</h1>
-        <p>Where we make bad movies look good.</p>
+        <p class="lead">Where we make bad movies look good.</p>
+
+        <hr/>
+        <p>What are you waiting for? <button src="{% url "registration_register" %}" class="btn btn-success">Join us here</button></p>
     </div>
 {% endblock content %}
