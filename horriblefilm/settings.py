@@ -26,13 +26,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
     'users.apps.UsersConfig',
     'films.apps.FilmsConfig',
 ]
@@ -125,3 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ACCOUNT_ACTIVATION_DAYS = 3
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

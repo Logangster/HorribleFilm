@@ -3,13 +3,12 @@
  }
 
  p {
-          font-family: 'Noto Sans'
+     font-family: 'Noto Sans'
  }
 
  .navbar {
      margin-bottom: 10px;
  }
-
 
   .navbar-brand img {
       margin-top: -20px;

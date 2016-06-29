@@ -1,10 +1,30 @@
-<h1>Login</h1>
+{% extends "base.html" %}
+{% load form_styles %}
 
+{% block content %}
 
-<section>
-<form action=. method=POST>
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <input type=submit value=Login />
-</form>
-</section>
+    <div class="container">
+        <div class="col-sm-6 jumbotron">
+            <h1>Login</h1>
+            <hr/>
+            {% if form.errors %}
+                <div class="alert alert-danger">Invalid username or password.</div>
+            {% endif %}
+            <form role="form" class="form-horizontal" method="post" action=.>
+                {% csrf_token %}
+                {% for field in form %}
+                    <fieldset class="form-group">
+                        <label for="{{ field.html_name }}">{{ field.label }}</label>
+                        {{ field | add_css:"form-control" }}
+                    </fieldset>
+                {% endfor %}
+
+                <br/>
+                <input type="submit" class="btn btn-primary" value="Login"/>
+            </form>
+
+            <hr/>
+            <p>Not a member? &nbsp;<a href="{% url "registration_register" %}">Register here</a></p>
+        </div>
+    </div>
+{% endblock content %}
